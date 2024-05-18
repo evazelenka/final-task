@@ -13,7 +13,6 @@
                 str3[j] = str[i];
                 j++;
             }
-
         }
         return str3;
     }
