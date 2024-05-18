@@ -2,13 +2,11 @@
 {
     if (CountNewArraySize(str) > 0)
     {
-        string str2 = "";
         string[] str3 = new string[CountNewArraySize(str)];
         int j = 0;
         for (int i = 0; i < str.Length; i++)
         {
-            str2 = str[i];
-            if (CountElements(StringToChar(str2)) <= 3)
+            if (CountElements(StringToChar(str[i])) <= 3)
             {
                 str3[j] = str[i];
                 j++;
@@ -48,12 +46,10 @@ void PrintStringArray(string[] str)
 
 int CountNewArraySize(string[] str)
 {
-    string str2 = "";
     int c = 0;
     for (int i = 0; i < str.Length; i++)
     {
-        str2 = str[i];
-        if (CountElements(StringToChar(str2)) <= 3)
+        if (CountElements(StringToChar(str[i])) <= 3)
         {
             c++;
         }
