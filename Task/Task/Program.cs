@@ -37,8 +37,6 @@ int CountNewArraySize(string[] str)
         {
             c++;
         }
-        else
-            c += 0;
     }
     return c;
 }
