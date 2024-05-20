@@ -1,30 +1,21 @@
-﻿string[] ShowSmallStrings(string[] str)
+﻿void ShowSmallStrings(string[] str)
 {
     if (CountNewArraySize(str) > 0)
     {
-        string[] str3 = new string[CountNewArraySize(str)];
+        string[] newStr = new string[CountNewArraySize(str)];
         int j = 0;
         for (int i = 0; i < str.Length; i++)
         {
-            if (CountElements(str[i]) == true)
+            if (str[i].Length <= 3)
             {
-                str3[j] = str[i];
+                newStr[j] = str[i];
                 j++;
             }
         }
-        return str3;
+        PrintStringArray(newStr);
     }
     else
-        return str;
-}
-
-bool CountElements(string str)
-{
-    if (str.Length <= 3)
-    {
-        return true;
-    }else
-    return false;
+        Console.WriteLine("[]");
 }
 
 void PrintStringArray(string[] str)
@@ -35,7 +26,6 @@ void PrintStringArray(string[] str)
         Console.Write(str[i] + ", ");
     }
     Console.Write(str[str.Length - 1] + "]");
-    Console.WriteLine();
 }
 
 int CountNewArraySize(string[] str)
@@ -43,7 +33,7 @@ int CountNewArraySize(string[] str)
     int c = 0;
     for (int i = 0; i < str.Length; i++)
     {
-        if (CountElements(str[i]) == true)
+        if (str[i].Length <= 3)
         {
             c++;
         }
@@ -53,6 +43,10 @@ int CountNewArraySize(string[] str)
     return c;
 }
 
-string[] str = { "He", "28", "eva", ":-)" };
+string[] str = { "He78", "2857", "eva", ":-)" };
 PrintStringArray(str);
-PrintStringArray(ShowSmallStrings(str));
+Console.Write(" -> ");
+ShowSmallStrings(str);
+
+
+
